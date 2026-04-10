@@ -16,34 +16,47 @@
         padding: 20px;
         margin: 10px;
         font-size: medium;
-        /* background-image: -moz-element(); */
-        backdrop-filter: unset;
-        box-shadow: chocolate;
+        border-color: black;
+        border-style:hidden;
     }
+    
     </style>
 <
 </head>
 <body>
     <h1> Counter App </h1>
     <h2 id="count">0</h2>
-    <p id="msg"></p>
-        
+        <p id="msg"></p>
         <button onclick="increase()">+</button>
         <button onclick="decrease()">-</button>
         <button onclick="reset()">Reset</button>
         <script>
-            let count=0;
+            let count=0;  
+            function updateDisplay(){
+            document.getElementById("count").innerText=count;
+            if(count>=10){
+                document.getElementById("msg").innerText="Limit Reached!";
+                document.getElementById("count").style.color="red";
+                        } 
+            else{
+                document.getElementById("msg").innerText="";
+                document.getElementById("count").style.color="black";
+            }
+            }    
             function increase(){
                 count++;
                 document.getElementById("count").innerText=count;
+                updateDisplay();
             }
             function decrease(){
                 count--;
                 document.getElementById("count").innerText=count;
+                updateDisplay();
             }
-            function reset(){
+            function reset(){   
                 count=0;
                 document.getElementById("count").innerText=count;
+                updateDisplay();
             }
         </script>
     </body>

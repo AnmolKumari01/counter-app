@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+    body {
+        text-align: center;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        margin-top: 30px;
+        background-color: bisque;
+        }
+    h1{
+        color: black;
+    }
+    button{
+        padding: 20px;
+        margin: 10px;
+        font-size: medium;
+        /* background-image: -moz-element(); */
+        backdrop-filter: unset;
+        box-shadow: chocolate;
+    }
+    </style>
+<
+</head>
+<body>
+    <h1> Counter App </h1>
+    <h2 id="count">0</h2>
+    <p id="msg"></p>
+        
+        <button onclick="increase()">+</button>
+        <button onclick="decrease()">-</button>
+        <button onclick="reset()">Reset</button>
+        <script>
+            let count=0;
+            function increase(){
+                count++;
+                document.getElementById("count").innerText=count;
+            }
+            function decrease(){
+                count--;
+                document.getElementById("count").innerText=count;
+            }
+            function reset(){
+                count=0;
+                document.getElementById("count").innerText=count;
+            }
+        </script>
+    </body>
+</html>
